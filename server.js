@@ -1,12 +1,19 @@
-const http = require('http') //https://nodejs.org/dist/latest-v18.x/docs/api/synopsis.html
+// const http = require('http') 
+//https://nodejs.org/dist/latest-v18.x/docs/api/synopsis.html
+
+import { get, createServer } from 'http'
 
 const PORT = 5000
 const HOST = 'localhost'
 
-const server = http.createServer((req, res) => {
+const server = createServer((req, res) => {
    res.end('Oi, estou funcionando com nodemon')
 
   });
+
+get('/', (req, res) =>{
+    return 'Teste'
+})
 
 
 server.listen(PORT, HOST, () =>{
